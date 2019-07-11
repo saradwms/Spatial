@@ -1,7 +1,5 @@
----
-title: "Getting GPS Coordinates for points within a survey area with known corners"
-output: html_notebook
----
+#Getting GPS Coordinates for points within a survey area with known corners
+
 The problem: I have a 10m x 10m survey plot where I know the lat&long of the corners (0,0;0,10;10,10;10,0) and XY coords of coolonies within the 10x10m plot. How do I get lat&long for each colony in the plot?
 
 My solution:
