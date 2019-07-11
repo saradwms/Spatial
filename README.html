@@ -187,9 +187,9 @@ $(document).ready(function () {
 </div>
 
 
-<div id="spatial" class="section level2">
-<h2># Spatial</h2>
-<p>title: “Getting GPS Coordinates for points within a survey area with known corners” output: html_notebook — The problem: I have a 10m x 10m survey plot where I know the lat&amp;long of the corners (0,0;0,10;10,10;10,0) and XY coords of coolonies within the 10x10m plot. How do I get lat&amp;long for each colony in the plot?</p>
+<div id="getting-gps-coordinates-for-points-within-a-survey-area-with-known-corners" class="section level1">
+<h1>Getting GPS Coordinates for points within a survey area with known corners</h1>
+<p>The problem: I have a 10m x 10m survey plot where I know the lat&amp;long of the corners (0,0;0,10;10,10;10,0) and XY coords of coolonies within the 10x10m plot. How do I get lat&amp;long for each colony in the plot?</p>
 <p>My solution: From Rudnicki, M., Meyer, T. H., Rudnicki, M., &amp; Meyer, T. H. (2007). systems Methods to Convert Local Sampling Coordinates Coordinate Systems. - “The Coons patch surface is parameterized by two logical variables, u and v. These variables essentially define the x and y directions as defined by the edges of the plot; note that they have no a priori relationship to east or north.Both u and v can have values in the range [0, 1]. We denote the Coons patch as s(u, v), meaning that the function s evaluated at parameter values u,v yields a point within the patch. The four corner points of the plot are denoted p00, p01, p10, and p11. With this notion, the formula for a Coons patch is s(u,v)=((1-u)<em>(1-v)</em>P00) + ((1-u)<em>v</em>P01) + (u<em>v</em>P11) + (u<em>(1-v)</em>P10).”</p>
 <pre class="{r}"><code>GPSFromXY_100m2Plot&lt;-function(P00,P01,P11,P10,x,y){
   #function uses coons patch geometry to solve for the lat/long of a point on an XY grid where the lat/long of the corners of the XY grid are known. Works for a 10mx10m survey plot.
